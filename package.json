@@ -1,0 +1,14 @@
+
+{
+  "name": "clidesalt",
+  "version": "1.0.0",
+  "description": "Sitio web informativo de Clidesalt, reparacion y mantenimiento de enfriadores y maquinas de hielo",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/styles.css -o ./dist/output.css --watch"
+  },
+  "dependencies": {
+    "tailwindcss": "^4.1.17",
+    "postcss": "8.5.6",
+    "autoprefixer": "^10.4.22"
+  }
+}
