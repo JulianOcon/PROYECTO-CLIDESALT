@@ -1,162 +1,423 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Clidesalt | Reparacion y Mantenimientode Enfriadores y Maquinas de Hielo
-    </title>
-    <link rel="stylesheet" href="../dist/output.css" />
+    <title>Clidesalt | Refrigeración Comercial Profesional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .fade-in-up {
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+
+      .float-animation {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      .gradient-text {
+        background: linear-gradient(135deg, #1e40af 0%, #06b6d4 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        padding-bottom: 1em;
+      }
+
+      .card-hover {
+        transition: all 0.3s ease;
+      }
+
+      .card-hover:hover {
+        transform: translateY(-8px);
+      }
+
+      .glass-effect {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+      }
+    </style>
   </head>
-  <body class="text-gray-800">
-    <header class="bg-negro text-white py-4">
-      <div class="container flex justify-between items-center">
-        <h1 class="text-2 font-bold text-azul">Clidesalt</h1>
-        <nav class="space-x-4 text-sm md:text-base">
-          <a href="#inicio" class="hover:text-azul">Inicio</a>
-          <a href="#servicios" class="hover:text-azul">Servicios</a>
-          <a href="#galeria" class="hover:text-azul">Galeria</a>
-          <a href="#nosotros" class="hover:text-azul">Nosotros</a>
-          <a href="#contacto" class="hover:text-azul">Contacto</a>
-        </nav>
+  <body class="bg-gradient-to-br from-gray-50 to-blue-50 text-gray-800">
+    <!-- HEADER -->
+    <header
+      class="glass-effect sticky top-0 z-50 shadow-lg border-b border-gray-200"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-4">
+          <!-- LOGO RECTANGULAR -->
+          <img
+            src="assets/trabajos/logo-c.png"
+            alt="Clidesalt"
+            class="h-12 w-auto object-contain"
+          />
+
+          <div class="leading-tight">
+            <h1 class="text-xl font-bold gradient-text">Clidesalt</h1>
+            <span class="text-xs text-gray-500">Refrigeración Comercial</span>
+          </div>
+        </div>
+
+        <a
+          href="#contacto"
+          class="hidden md:block bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-2 rounded-full font-semibold hover:shadow-xl transition-all duration-300 hover:scale-105"
+        >
+          Contactar
+        </a>
       </div>
     </header>
 
-    <!-- ===== Inicio ===== -->
+    <!-- HERO SECTION -->
     <section
-      id="incio"
-      class="bg-gradient-to-b from-azul to-blue-900 text-white py-20 text-center"
+      class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-700 overflow-hidden"
     >
-      <div class="container">
-        <h2 class="text-4x1 font-bold mb-4">
-          Enfriadores y maquinas de hielo en las mejores condiciones
-        </h2>
-        <p class="text-lg max-w-2x1 mx-auto">
-          Servicio profesional de reparacion, instalacion y mantenimiento de
-          enfriadores comerciales y maquinas de hielo en Saltillo, Coahuila.
-        </p>
+      <div class="absolute inset-0 opacity-10">
+        <div
+          class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full filter blur-3xl"
+        ></div>
+        <div
+          class="absolute bottom-0 right-0 w-96 h-96 bg-cyan-300 rounded-full filter blur-3xl"
+        ></div>
       </div>
-    </section>
 
-    <!-- ===== Servicios ===== -->
-    <section id="servicios" class="py-16 bg-white">
-      <div class="container text-center">
-        <h2 class="text-3x1 font-bold mb-8 text-azul">Nuestro Servicios</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-          <!-- Servicio -->
+      <div class="relative max-w-7xl mx-auto px-6 py-20 md:py-28">
+        <div class="flex flex-col items-center text-center gap-8 fade-in-up">
           <div
-            class="bg-neutral-100 p-6 rounded-xl shadow hover:shadow-lg transition"
+            class="w-56 h-56 bg-white/80 backdrop-blur rounded-2xl flex items-center justify-center float-animation p-4"
           >
-            <h3 class="font-semibold text-lg mb-2">Cambio de compresor</h3>
-            <p>
-              Reemplazo de compresores dañados en enfriadores y maquinas de
-              hielo para recuperar su renddimiento orignal.
+            <img
+              src="assets/trabajos/logo.jpeg"
+              alt="Logo Clidesalt"
+              class="max-w-full max-h-full object-contain"
+            />
+          </div>
+
+          <div>
+            <h2
+              class="text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight"
+            >
+              Servicio Profesional en<br />
+              <span class="text-cyan-300">Refrigeración Comercial</span>
+            </h2>
+
+            <p
+              class="max-w-3xl mx-auto text-lg md:text-xl text-blue-100 leading-relaxed"
+            >
+              Reparación, mantenimiento e instalación de enfriadores y máquinas
+              de hielo para tiendas de conveniencia y expendios de cerveza en el area metropolitana de 
+              Saltillo, Coahuila y Monterrey, Nuevo León.
             </p>
           </div>
 
-          <div
-            class="bg-neutral-100 p-6 rounded-xl shadow hover:shadow-lg transition"
-          >
-            <h3 class="font-semibold text-lg mb-2">
-              Carga de gas refrigerante
-            </h3>
-            <p>
-              Recargamos gas para recuperar la eficiencia del sistema de
-              enfriamiento del equipo.
-            </p>
-          </div>
-
-          <div
-            class="bg-neutral-100 p-6 rounded-xl shadow hover:shadow-lg transition"
-          >
-            <h3 class="font-semibold text-lg mb-2">Cambio de filtros</h3>
-            <p>
-              Reemplazo de filtros para asegurar agua y aire limpios en el
-              funcionamiento del equipo.
-            </p>
-          </div>
-
-          <div
-            class="bg-neutral-100 p-6 rounded-xl shadow hover:shadow-lg transition"
-          >
-            <h3 class="font-semibold text-lg mb-2">Reparación de fugas</h3>
-            <p>
-              Detección y sellado de fugas en líneas de gas o agua que afectan
-              el rendimiento del sistema.
-            </p>
-          </div>
-
-          <div
-            class="bg-neutral-100 p-6 rounded-xl shadow hover:shadow-lg transition"
-          >
-            <h3 class="font-semibold text-lg mb-2">
-              Instalación de máquinas de hielo
-            </h3>
-            <p>
-              Instalamos equipos nuevos asegurando correcta conexión eléctrica e
-              hidráulica.
-            </p>
-          </div>
-
-          <div
-            class="bg-neutral-100 p-6 rounded-xl shadow hover:shadow-lg transition"
-          >
-            <h3 class="font-semibold text-lg mb-2">Mantenimiento preventivo</h3>
-            <p>
-              Limpieza, revisión de componentes y calibración de equipos para
-              prolongar su vida útil.
-            </p>
+          <div class="flex flex-col sm:flex-row gap-4 mt-4">
+            <a
+              href="#servicios"
+              class="bg-white text-blue-900 px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 hover:scale-105"
+            >
+              Ver Servicios
+            </a>
+            <a
+              href="#contacto"
+              class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-blue-900 transition-all duration-300"
+            >
+              Contactar Ahora
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== Galeria ===== -->
-    <section id="galeria" class="py-16 bg-neutral-50">
-      <div class="container text-center">
-        <h2 class="text-3x1 font-bold mb-8 text-azul">Galeria de trabajo</h2>
-        <p class="mb-6">
-          Algunos de nuestros servicios realizados y resultados de
-          mantenimiento.
-        </p>
-        <div>
-          <div class="bg-neutral-200 h-56 rounded-lg"></div>
-          <div class="bg-neutral-200 h-56 rounded-lg"></div>
-          <div class="bg-neutral-200 h-56 rounded-lg"></div>
+    <!-- SOBRE NOSOTROS -->
+    <section class="py-20 bg-white relative overflow-hidden">
+      <div
+        class="absolute top-0 right-0 w-64 h-64 bg-blue-100 rounded-full filter blur-3xl opacity-30"
+      ></div>
+
+      <div class="relative max-w-5xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <span
+            class="text-cyan-600 font-semibold text-sm uppercase tracking-wider"
+            >Conoce a Clidesalt</span
+          >
+          <h3 class="text-4xl md:text-5xl font-bold mt-3 gradient-text leading-[1.2] pb-1">
+            ¿Quiénes Somos?
+          </h3>
+        </div>
+
+        <div
+          class="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 md:p-12 rounded-3xl shadow-xl border border-blue-100"
+        >
+          <p
+            class="text-gray-700 leading-relaxed text-lg md:text-xl text-center"
+          >
+            En <strong class="text-blue-700">Clidesalt</strong> contamos con
+            amplia experiencia en el servicio técnico especializado en equipos
+            de refrigeración comercial. Atendemos enfriadores, vitrinas y
+            máquinas de hielo con soluciones confiables, rápidas y profesionales
+            que mantienen tu negocio funcionando sin interrupciones.
+          </p>
+
+          <div class="grid md:grid-cols-3 gap-6 mt-10">
+            <div class="text-center">
+              <div class="text-4xl font-bold text-blue-600 mb-2">10+</div>
+              <div class="text-gray-600">Años de Experiencia</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-bold text-blue-600 mb-2">500+</div>
+              <div class="text-gray-600">Clientes Satisfechos</div>
+            </div>
+            
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== Nosotros ===== -->
-    <section id="nosotros" class="py-16 bg-white">
-      <div>
-        <h2 class="text-3x1 font-bold mb-6 text-azul">Sobre Nosotros</h2>
-        <p class="max-w-2x1 mx-auto">
-          En <span class="font-semibold">Clidesalt</span> nos especializamos en
-          el mantenimiento, instalacion, retiro y reparacion de enfriadores y
-          maquinas de hielo. Ofrecemos soluciones confiables, rapidas y
-          profesionales para tiendas de conveniencia, expendios y negocios
-          locales en las zonas metropolitanas de Saltillo y Monterrey,
-          garantizando el optimo funcionamiento de equipos en todo momento.
-        </p>
+    <!-- SERVICIOS -->
+    <section
+      id="servicios"
+      class="py-20 bg-gradient-to-br from-gray-50 to-blue-50"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <span
+            class="text-cyan-600 font-semibold text-sm uppercase tracking-wider"
+            >Lo Que Ofrecemos</span
+          >
+          <h3 class="text-4xl md:text-5xl font-bold mt-3 gradient-text">
+            Nuestros Servicios
+          </h3>
+          <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+            Soluciones completas para mantener tus equipos en óptimas
+            condiciones
+          </p>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <!---------- Servicio 1 ----------->
+          <a
+            href="servicios/cambio-compresor.html"
+            class="card-hover group bg-white p-8 rounded-2xl shadow-lg border-2 border-transparent hover:border-blue-500 hover:shadow-2xl"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <img 
+              src="assets/trabajos/compresor.png" 
+              alt="Cambio de Compresor"
+              class="w-10 h-10 object-coontain"/>
+            </div>
+            <h4 class="font-bold text-xl mb-4 text-gray-800 group-hover:text-blue-600 transition-colors leading-[1.3]">
+
+              Cambio de Compresor
+            </h4>
+            <p class="text-gray-600 leading-relaxed">
+              Reemplazo profesional de compresores en enfriadores y máquinas de
+              hielo con garantía de calidad.
+            </p>
+            <div
+              class="mt-4 text-blue-600 font-semibold flex items-center gap-2 group-hover:gap-3 transition-all"
+            >
+              Más información <span>→</span>
+            </div>
+          </a>
+
+          <!----------- Servicio 2 ------------>
+          <a
+            href="servicios/carga-gas.html"
+            class="card-hover group bg-white p-8 rounded-2xl shadow-lg border-2 border-transparent hover:border-blue-500 hover:shadow-2xl"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <img 
+              src="assets/trabajos/gas.png" 
+              alt="Carga de Gas"
+              class="w-10 h-10 object-contain"/>
+            </div>
+            <h4
+              class="font-bold text-xl mb-3 text-gray-800 group-hover:text-blue-600 transition-colors"
+            >
+              Carga de Gas
+            </h4>
+            <p class="text-gray-600 leading-relaxed">
+              Carga y verificación precisa de gas refrigerante para máximo
+              rendimiento y eficiencia.
+            </p>
+            <div
+              class="mt-4 text-blue-600 font-semibold flex items-center gap-2 group-hover:gap-3 transition-all"
+            >
+              Más información <span>→</span>
+            </div>
+          </a>
+
+          <!--------- Servicio 3 ----------->
+          <a
+            href="servicios/mantenimiento.html"
+            class="card-hover group bg-white p-8 rounded-2xl shadow-lg border-2 border-transparent hover:border-blue-500 hover:shadow-2xl"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <img src="assets/trabajos/mantenimiento.png" 
+              alt="Mantenimiento Preventivo"
+              class="w-10 h-10 object-contain"/>
+            </div>
+            <h4
+              class="font-bold text-xl mb-3 text-gray-800 group-hover:text-blue-600 transition-colors"
+            >
+              Mantenimiento Preventivo
+            </h4>
+            <p class="text-gray-600 leading-relaxed">
+              Limpieza completa y revisión exhaustiva para prevenir fallas y
+              alargar la vida útil.
+            </p>
+            <div
+              class="mt-4 text-blue-600 font-semibold flex items-center gap-2 group-hover:gap-3 transition-all"
+            >
+              Más información <span>→</span>
+            </div>
+          </a>
+
+          <!---------- Servicio 4 ----------->
+          <a
+            href="servicios/instalacion-hielo.html"
+            class="card-hover group bg-white p-8 rounded-2xl shadow-lg border-2 border-transparent hover:border-blue-500 hover:shadow-2xl"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-cyan-600 to-blue-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <img 
+              src="assets/trabajos/instalacion.png" 
+              alt="Instalacion de Equipos"
+              class="w-10 h-10 object-contain"/>
+            </div>
+            <h4
+              class="font-bold text-xl mb-3 text-gray-800 group-hover:text-blue-600 transition-colors"
+            >
+              Instalación de Equipos
+            </h4>
+            <p class="text-gray-600 leading-relaxed">
+              Transporte, instalación y puesta en marcha de máquinas de hielo y
+              enfriadores.
+            </p>
+            <div
+              class="mt-4 text-blue-600 font-semibold flex items-center gap-2 group-hover:gap-3 transition-all"
+            >
+              Más información <span>→</span>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
 
-    <!--===== Contacto =====-->
-    <section id="contacto" class="py-16 bg-neutral-100">
-      <div class="container text-center">
-        <h2 class="text-3x1 font-bold mb-6 text-azul">Contacto</h2>
-        <p class="mb-2">Telefono: (0101010101)</p>
-        <p class="mb-2">Saltillo, Coahuila</p>
-        <p class="text-gray-600">
-          Atencion de Lunes a Sabado, 9:00 a.m a 6:00 p.m
-        </p>
+    <!-- CONTACTO -->
+    <section
+      id="contacto"
+      class="py-20 bg-gradient-to-br from-blue-900 to-cyan-800 text-white relative overflow-hidden"
+    >
+      <div class="absolute inset-0 opacity-10">
+        <div
+          class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full filter blur-3xl"
+        ></div>
+      </div>
+
+      <div class="relative max-w-5xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <span
+            class="text-cyan-300 font-semibold text-sm uppercase tracking-wider"
+            >Estamos Para Ayudarte</span
+          >
+          <h3 class="text-4xl md:text-5xl font-bold mt-3 mb-6">Contáctanos</h3>
+          <p class="text-blue-100 text-lg">
+            ¿Necesitas servicio técnico? Estamos disponibles para atenderte
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          <div
+            class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all"
+          >
+            <div class="text-5xl mb-4">📞</div>
+            <h4 class="font-bold text-xl mb-3">Teléfono</h4>
+            <a
+              href="tel:0000000000"
+              class="text-2xl font-bold text-cyan-300 hover:text-cyan-200 transition-colors"
+            >
+              000-000-0000
+            </a>
+          </div>
+
+          <div
+            class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all"
+          >
+            <div class="text-5xl mb-4">📍</div>
+            <h4 class="font-bold text-xl mb-3">Ubicación</h4>
+            <p class="text-xl text-blue-100">
+              Saltillo, Coahuila<br />
+              <span class="text-sm">Servicio en área metropolitana</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a
+            href="tel:0000000000"
+            class="inline-block bg-white text-blue-900 px-10 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 hover:scale-105"
+          >
+            Llamar Ahora
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- ===== Footer ===== -->
-    <footer class="bg-negro text-white py-6 text-center text-sm">
-      <p>© 2025 Clidesalt. Todos los derechos reservados.</p>
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col items-center gap-6">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 flex items-center justify-center"
+            >
+              <img
+                src="assets/trabajos/logo-c.png"
+                alt="Clidesalt"
+                class="h-12 w-auto object-contain"
+              />
+            </div>
+            <div class="leading-tight">
+              <div class="text-white font-bold">Clidesalt</div>
+              <div class="text-xs text-gray-500">Refrigeración Comercial</div>
+            </div>
+          </div>
+
+          <div class="h-px w-32 bg-gray-700"></div>
+
+          <p class="text-sm">
+            © 2025 Clidesalt · Todos los derechos reservados
+          </p>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
