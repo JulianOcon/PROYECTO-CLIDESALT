@@ -3,11 +3,13 @@ document.querySelectorAll(".slider").forEach(slider => {
     const img = slider.querySelector(".slider-img");
     const next = slider.querySelector(".next");
     const prev = slider.querySelector(".prev");
+    const counter = slider.querySelector(".slider-counter")
 
     let index = 0;
     let paused = false;
 
     img.src = images[index];
+    counter.textContent = `1 / ${images.length}`; //Para calcular en automatico la cantidad de imagenes 
 
     function changeImage(i) {
         img.classList.add("opacity-0");
@@ -15,6 +17,7 @@ document.querySelectorAll(".slider").forEach(slider => {
             index = (i + images.length) % images.length;
             img.src = images[index];
             img.classList.remove("opacity-0");
+            counter.textContent = `${index + 1} / ${images.length}`; // Para que cambien los numeros al cambiar las imagenes
         }, 300);
     }
 

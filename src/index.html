@@ -1,3 +1,4 @@
+<!-- index.html   --->
 <!doctype html>
 <html lang="es">
   <head>
@@ -55,10 +56,21 @@
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
       }
+
+      .brand-card {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .brand-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
     </style>
   </head>
   <body class="bg-gradient-to-br from-gray-50 to-blue-50 text-gray-800">
-    <!-- HEADER -->
+    <!------------ HEADER ------------->
     <header
       class="glass-effect sticky top-0 z-50 shadow-lg border-b border-gray-200"
     >
@@ -194,71 +206,92 @@
       </div>
     </section>
 
-    <!----------------- Marcas y Equipos ------------------>
-    <section class="py-20 bg-white">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-14">
-          <span
-            class="text-cyan-600 font-semibold text-sm uppercase tracking-wide"
-          >
-            Experiencia en el sector
-          </span>
+    <!-------------------------- Marcas y Equipos -------------------------------->
+    <!----------------- Marcas y Equipos -------------------------------->
+<section class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
 
-          <h3 class="text-4xl md:text-5xl font-bold mt-3 gradient-text">
-            Equipos utilizados por marcas reconocidas
-          </h3>
+    <div class="text-center mb-14">
+      <span class="text-cyan-600 font-semibold text-sm uppercase tracking-wide">
+        Experiencia en el sector
+      </span>
+      <h3 class="text-4xl md:text-5xl font-bold mt-3 gradient-text">
+        Equipos utilizados por marcas reconocidas
+      </h3>
+      <p class="text-gray-600 mt-4 max-w-3xl mx-auto">
+        Nuestro servicio técnico atiende equipos de refrigeración comercial
+        utilizados en tiendas, supermercados y negocios que trabajan con
+        marcas reconocidas de bebidas y alimentos.
+      </p>
+    </div>
 
-          <p class="text-gray-600 mt-4 max-w-3xl mx-auto">
-            Nuestro servcio tecnico atiende equipos de refrigeracion comercial
-            utilizados en tiendas, supermercados y negocios que trabajan con
-            marcas reconocidas de bebidas y alimentos.
-          </p>
-        </div>
+    <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
 
-        <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
-          <div class="bg-blue-50 p-6 rounded-xl font-semibold text-gray-700">
-            Equipos usados por marcas como
-            <div class="mt-2 text-blue-700 font-bold">Jumex</div>
-          </div>
-
-          <div class="bg-blue-50 p-6 rounded-xl font-semibold text-gray-700">
-            Refrigeradores comerciales de
-            <div class="mt-2 text-blue-700 font-bold">Peñafiel</div>
-          </div>
-
-          <div class="bg-blue-50 p-6 rounded-xl font-semibold text-gray-700">
-            Equipos presentes en expendios de
-            <div class="mt-2 text-blue-700 font-bold">Corona</div>
-          </div>
-
-          <div class="bg-blue-50 p-6 rounded-xl font-semibold text-gray-700">
-            Equipos de
-            <div class="mt-2 text-blue-700 font-bold">Torrey</div>
-          </div>
-
-          <div class="bg-blue-50 p-6 rounded-xl font-semibold text-gray-700">
-            Refrigeradores comerciales de
-            <div class="mt-2 text-blue-700 font-bold">Imbera</div>
-          </div>
-
-          <div class="bg-blue-50 p-6 rounded-xl font-semibold text-gray-700">
-            Equipos en tiendas como
-            <div class="mt-2 text-blue-700 font-bold">Seven Eleven</div>
-          </div>
-
-          <div class="bg-blue-50 p-6 rounded-xl font-semibold text-gray-700">
-            Equipos en supermercados como
-            <div class="mt-2 text-blue-700 font-bold">Soriana</div>
-          </div>
-        </div>
-
-        <p class="text-center text_gray-500 text-sm mt-10">
-          Las marcas mecionadas se utilizan únicamente como referencia de los
-          equipos atendidos por nuestro servicio tecnico.
-        </p>
+      <!-- Jumex -->
+      <div class="brand-card bg-white rounded-xl p-6 shadow-md border border-gray-100"
+           style="border-top: 4px solid #003DA5;">
+        <p class="text-gray-500 text-sm">Equipos usados por marcas como</p>
+        <div class="mt-2 font-bold text-xl" style="color: #003DA5;">Jumex</div>
       </div>
-    </section>
 
+      <!-- Peñafiel -->
+      <div class="brand-card bg-white rounded-xl p-6 shadow-md border border-gray-100"
+           style="border-top: 4px solid #cc0000;">
+        <p class="text-gray-500 text-sm">Refrigeradores comerciales de</p>
+        <div class="mt-2 font-bold text-xl" style="color: #cc0000;">Peñafiel</div>
+      </div>
+
+      <!-- Corona -->
+      <div class="brand-card bg-white rounded-xl p-6 shadow-md border border-gray-100"
+           style="border-top: 4px solid #003087;">
+        <p class="text-gray-500 text-sm">Equipos presentes en expendios de</p>
+        <div class="mt-2 font-bold text-xl" style="color: #003087;">Corona</div>
+      </div>
+
+      <!-- Torrey -->
+      <div class="brand-card bg-white rounded-xl p-6 shadow-md border border-gray-100"
+           style="border-top: 4px solid #B71C1C;">
+        <p class="text-gray-500 text-sm">Equipos de</p>
+        <div class="mt-2 font-bold text-xl" style="color: #B71C1C;">Torrey</div>
+      </div>
+
+      <!-- Imbera -->
+      <div class="brand-card bg-white rounded-xl p-6 shadow-md border border-gray-100"
+           style="border-top: 4px solid #1565C0;">
+        <p class="text-gray-500 text-sm">Refrigeradores comerciales de</p>
+        <div class="mt-2 font-bold text-xl" style="color: #1565C0;">Imbera</div>
+      </div>
+
+      <!-- 7-Eleven y OXXO -->
+      <div class="brand-card bg-white rounded-xl p-6 shadow-md border border-gray-100"
+           style="border-top: 4px solid #007A33;">
+        <p class="text-gray-500 text-sm">Equipos en tiendas como</p>
+        <div class="mt-2 font-bold text-xl" style="color: #007A33;">Seven Eleven <span style="color: #FF6600;">y OXXO</span></div>
+      </div>
+
+      <!-- Soriana -->
+      <div class="brand-card bg-white rounded-xl p-6 shadow-md border border-gray-100"
+           style="border-top: 4px solid #CC0000;">
+        <p class="text-gray-500 text-sm">Equipos en supermercados como</p>
+        <div class="mt-2 font-bold text-xl" style="color: #CC0000;">Soriana</div>
+      </div>
+
+      <!-- Negocios independientes -->
+      <div class="brand-card bg-white rounded-xl p-6 shadow-md border border-gray-100"
+           style="border-top: 4px solid #1e40af;">
+        <p class="text-gray-500 text-sm">Equipos en</p>
+        <div class="mt-2 font-bold text-xl text-blue-700">Negocios independientes</div>
+      </div>
+
+    </div>
+
+    <p class="text-center text-gray-400 text-sm mt-10">
+      Las marcas mencionadas se utilizan únicamente como referencia de los
+      equipos atendidos por nuestro servicio técnico.
+    </p>
+
+  </div>
+</section>
     <!-- SERVICIOS -->
 
     <section
