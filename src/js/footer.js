@@ -11,8 +11,8 @@
 (function () {
   const enServicio = window.location.pathname.includes("/servicios/");
   const logoSrc = enServicio
-    ? "../assets/trabajos/logo-c.png"
-    : "assets/trabajos/logo-c.png";
+    ? "../assets/trabajos/logo-c.svg"
+    : "assets/trabajos/logo-c.svg";
   const raiz = enServicio ? "../" : "";
 
   const year = new Date().getFullYear();
