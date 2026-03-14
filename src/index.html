@@ -66,6 +66,20 @@
         transform: translateY(-8px);
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
       }
+
+      .contenedor {
+        display: flex;
+        gap: 40px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      li {
+        white-space: nowrap;
+      }
     </style>
   </head>
   <body class="bg-gradient-to-br from-gray-50 to-blue-50 text-gray-800">
@@ -177,9 +191,27 @@
               <div class="text-gray-600">Clientes Satisfechos</div>
             </div>
             <div class="text-center">
-              <div class="text-2xl font-bold text-blue-600 mb-2">Ciudades Atendidas</div>
-              <div class="text-gray-600">Saltillo, Ramos Arizpe, Arteaga, Parras, Piedras Negras, 
-                Monterrey, Guadalupe, San Pedro Garza Garcia, Apodaca, Escobedo, Cadereyta</div>
+              <div class="text-2xl font-bold text-blue-600 mb-2">
+                Ciudades Atendidas
+              </div>
+              <div class="text-gray-600, contenedor">
+                <ul>
+                  <li>Saltillo</li>
+                  <li>Ramos Arizpe</li>
+                  <li>Arteaga</li>
+                  <li>Parras</li>
+                  <li>Piedras Negras</li>
+                </ul>
+                <ul>
+                  <li>Monterrey</li>
+                  <li>Guadalupe</li>
+                  <li>San Pedro Garza Garcia</li>
+                  <li>Apodaca</li>
+                  <li>Escobedo</li>
+                  <li>Cadereyta</li>
+                  <li>Linares</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
