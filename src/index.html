@@ -57,14 +57,47 @@
       }
 
       .brand-card {
-        transition:
-          transform 0.3s ease,
-          box-shadow 0.3s ease;
+        transition: all 0.4s ease;
+        max-height: 200px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      .brand-card.active {
+        max-height: 400px;
+        border: 2px solid #3b82f6;
+        box-shadow: 0 20px 50px rgba(59, 130, 246, 0.25);
       }
 
       .brand-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        transform: translateY(-6px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      /* CARD ACTIVA */
+      .brand-card.active {
+        border: 2px solid #3b82f6;
+        box-shadow: 0 20px 50px rgba(59, 130, 246, 0.25);
+      }
+
+      /* DESPLIEGUE ANIMADO */
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        opacity: 0;
+        margin-top: 0;
+        font-size: 14px;
+        color: #555;
+        text-align: center;
+      }
+
+      .accordion-content.open {
+        opacity: 1;
+        margin-top: 10px;
       }
 
       .contenedor {
@@ -79,6 +112,15 @@
 
       li {
         white-space: nowrap;
+      }
+
+      .icon {
+        transition: all 0.3s ease;
+      }
+
+      .icon.hidden {
+        opacity: 0;
+        transform: scale(0.5);
       }
     </style>
   </head>
@@ -171,7 +213,7 @@
         <div
           class="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 md:p-12 rounded-3xl shadow-xl border border-blue-100"
         >
-          <p{ñññ}
+          <p
             class="text-gray-700 leading-relaxed text-lg md:text-xl text-center"
           >
             En <strong class="text-blue-700">Clidesalt</strong> contamos con
@@ -201,6 +243,7 @@
                   <li>Arteaga</li>
                   <li>Parras</li>
                   <li>Piedras Negras</li>
+                  <li>Durango</li>
                 </ul>
                 <ul>
                   <li>Monterrey</li>
@@ -228,7 +271,7 @@
             Experiencia en el sector
           </span>
           <h3 class="text-4xl md:text-5xl font-bold mt-3 gradient-text">
-            Equipos utilizados por marcas reconocidas
+            Empresas y marcas donde brindamos servicio
           </h3>
           <p class="text-gray-600 mt-4 max-w-3xl mx-auto">
             Nuestro servicio técnico atiende equipos de refrigeración comercial
@@ -237,16 +280,145 @@
           </p>
         </div>
 
-        <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
+        <div class="col-span-full mt-10 mb-4">
+          <h4 class="text-xl font-semibold text-gray-700 text-left">
+            Empresas con las que trabajamos
+          </h4>
+          <div class="h-px bg-gray-200 mt-2"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
+          <!----- Imbera ------>
+          <div
+            class="brand-card group bg-white rounded-xl p-6 shadow-md border cursor-pointer transition-all duration-300"
+            onmouseenter="openCard(this, 'imbera')"
+            onmouseleave="closeCard(this, 'imbera')"
+            style="border-top: 4px solid #0453db"
+          >
+            <div class="flex flex-col items-center text-center">
+              <p class="text-gray-500 text-sm mb-2">
+                Refrigeradores comerciales de
+              </p>
+
+              <img
+                src="assets/logos-empresas/imbera.svg"
+                class="w-24 h-24 object-contain mb-4 transition duration-300 group-hover:scale-110"
+              />
+
+              <span class="icon text-xl font-bold transition-all duration-300"
+                >+</span
+              >
+            </div>
+
+            <div id="imbera" class="accordion-content">
+              Trabajamos directamente con equipos Imbera, realizando
+              mantenimiento, reparación y diagnóstico especializado en
+              refrigeración comercial.
+            </div>
+          </div>
+
+          <!----- REPARE ----->
+          <div
+            class="brand-card group bg-white rounded-xl p-6 shadow-md border cursor-pointer transition-all"
+            onmouseenter="openCard(this, 'repare')"
+            onmouseleave="closeCard(this, 'repare')"
+            style="border-top: 4px solid #003da5"
+          >
+            <div class="flex flex-col items-center text-center">
+              <p class="text-gray-500 text-sm mb-2">
+                Servicos técnicos en&nbsp;colaboracion&nbsp;con
+              </p>
+
+              <img
+                src="assets/logos-empresas/repare.svg"
+                class="w-24 h-24 object-contain mb-0.5 transition duration-300 group-hover:scale-110"
+              />
+
+              <span class="icon text-xl font-bold transition-all duration-300"
+                >+</span
+              >
+            </div>
+
+            <div id="repare" class="accordion-content">
+              Compañia especializada en mantenimiento de equipos de
+              refrigeracion comercial y atencion integral a tiendas de
+              conveniencia, incluyendo refacciones y soporte tecnico.
+            </div>
+          </div>
+
+          <!----- Torrey ------>
+          <div
+            class="brand-card group bg-white rounded-xl p-6 shadow-md border cursor-pointer transition-all duration-300"
+            onmouseenter="openCard(this, 'torrey')"
+            onmouseleave="closeCard(this, 'torrey')"
+            style="border-top: 4px solid #b71c1c"
+          >
+            <div class="flex flex-col items-center text-center">
+              <p class="text-gray-500 text-sm mb-2">Equipos de</p>
+              <img
+                src="assets/logos-empresas/torrey.svg"
+                class="w-24 h-24 object-contain mb-4 transition duration-300 group-hover:scale-110"
+              />
+
+              <span class="icon text-xl font-bold transition-all duration-300"
+                >+</span
+              >
+            </div>
+
+            <div id="torrey" class="accordion-content">
+              Empresa dedicada a la fabricación de equipos para el
+              procesamiento, pesaje y conservación de alimentos en entornos
+              comerciales e industriales.
+            </div>
+          </div>
+
+          <!----- OXXO ------>
+          <div
+            class="brand-card group bg-white rounded-xl p-6 shadow-md border cursor-pointer transition-all duration-300"
+            onmouseenter="openCard(this, 'oxxo')"
+            onmouseleave="closeCard(this, 'oxxo')"
+            style="border-top: 4px solid #f37115"
+          >
+            <div class="flex flex-col items-center text-center">
+              <p class="text-gray-500 text-sm mb-2">
+                Servicios técnicos en tiendas de
+              </p>
+              <img
+                src="assets/logos-empresas/oxxo.svg"
+                class="w-24 h-24 object-contain mb-4 transition duration-300 group-hover:scale-110"
+              />
+
+              <span class="icon text-xl font-bold transition-all duration-300"
+                >+</span
+              >
+            </div>
+
+            <div id="oxxo" class="accordion-content">
+              Cadena de tiendas de conveniencia con amplia presencia en América
+              Latina, enfocada en ofrecer productos y servicios accesibles en
+              múltiples comunidades.
+            </div>
+          </div>
+
+          <!------------------------------------------------------------------------------------------>
+          <div class="col-span-full mt-10 mb-4">
+            <h4 class="text-xl font-semibold text-gray-700 text-left">
+              Marcas a las que brindamos servicio
+            </h4>
+            <div class="h-px bg-gray-200 mt-2"></div>
+          </div>
+
           <!-- Jumex -->
           <div
             class="brand-card bg-white rounded-xl p-6 shadow-md border border-gray-100"
             style="border-top: 4px solid #003da5"
           >
             <p class="text-gray-500 text-sm">Equipos usados por marcas como</p>
-            <div class="mt-2 font-bold text-xl" style="color: #003da5">
-              Jumex
-            </div>
+            <img
+              src="assets/logos-empresas/jumex.svg"
+              alt="logo-jumex"
+              class="w-24 h-24 object-contain mx-auto opacity-80 hover:opacity-100 transition duration-300"
+            />
           </div>
 
           <!-- Peñafiel -->
@@ -255,9 +427,11 @@
             style="border-top: 4px solid #cc0000"
           >
             <p class="text-gray-500 text-sm">Refrigeradores comerciales de</p>
-            <div class="mt-2 font-bold text-xl" style="color: #cc0000">
-              Peñafiel
-            </div>
+            <img
+              src="assets/logos-empresas/penafiel.svg"
+              alt="logo-penafiel"
+              class="w-24 h-24 object-contain mx-auto opacity-80 hover:opacity-100 transition duration-300"
+            />
           </div>
 
           <!-- Corona -->
@@ -268,42 +442,11 @@
             <p class="text-gray-500 text-sm">
               Equipos presentes en expendios de
             </p>
-            <div class="mt-2 font-bold text-xl" style="color: #003087">
-              Corona
-            </div>
-          </div>
-
-          <!-- Torrey -->
-          <div
-            class="brand-card bg-white rounded-xl p-6 shadow-md border border-gray-100"
-            style="border-top: 4px solid #b71c1c"
-          >
-            <p class="text-gray-500 text-sm">Equipos de</p>
-            <div class="mt-2 font-bold text-xl" style="color: #b71c1c">
-              Torrey
-            </div>
-          </div>
-
-          <!-- Imbera -->
-          <div
-            class="brand-card bg-white rounded-xl p-6 shadow-md border border-gray-100"
-            style="border-top: 4px solid #1565c0"
-          >
-            <p class="text-gray-500 text-sm">Refrigeradores comerciales de</p>
-            <div class="mt-2 font-bold text-xl" style="color: #1565c0">
-              Imbera
-            </div>
-          </div>
-
-          <!-- 7-Eleven y OXXO -->
-          <div
-            class="brand-card bg-white rounded-xl p-6 shadow-md border border-gray-100"
-            style="border-top: 4px solid #007a33"
-          >
-            <p class="text-gray-500 text-sm">Equipos en tiendas como</p>
-            <div class="mt-2 font-bold text-xl" style="color: #007a33">
-              Seven Eleven <span style="color: #ff6600">y OXXO</span>
-            </div>
+            <img
+              src="assets/logos-empresas/corona.svg"
+              alt="logo-corona"
+              class="w-24 h-24 object-contain mx-auto opacity-80 hover:opacity-100 transition duration-300"
+            />
           </div>
 
           <!-- Soriana -->
@@ -312,9 +455,11 @@
             style="border-top: 4px solid #cc0000"
           >
             <p class="text-gray-500 text-sm">Equipos en supermercados como</p>
-            <div class="mt-2 font-bold text-xl" style="color: #cc0000">
-              Soriana
-            </div>
+            <img
+              src="assets/logos-empresas/soriana.svg"
+              alt="logo-soriana"
+              class="w-24 h-24 object-contain mx-auto opacity-80 hover:opacity-100 transition duration-300"
+            />
           </div>
 
           <!-- Negocios independientes -->
@@ -335,8 +480,8 @@
         </p>
       </div>
     </section>
-    <!-- SERVICIOS -->
 
+    <!-- SERVICIOS -->
     <section
       id="servicios"
       class="py-20 bg-gradient-to-br from-gray-50 to-blue-50"
@@ -368,8 +513,8 @@
               <img
                 src="assets/iconos/compresor.svg"
                 alt="Cambio de Compresor"
-                class="w-10 h-10 object-coontain"
-                style="filter: brightness(0) invert(1);"
+                class="w-10 h-10 object-contain"
+                style="filter: brightness(0) invert(1)"
               />
             </div>
             <h4
@@ -400,7 +545,7 @@
                 src="assets/iconos/gas.svg"
                 alt="Carga de Gas"
                 class="w-10 h-10 object-contain"
-                style="filter: brightness(0) invert(1);"
+                style="filter: brightness(0) invert(1)"
               />
             </div>
             <h4
@@ -431,7 +576,7 @@
                 src="assets/iconos/mantenimiento.svg"
                 alt="Mantenimiento Preventivo"
                 class="w-10 h-10 object-contain"
-                style="filter: brightness(0) invert(1);"
+                style="filter: brightness(0) invert(1)"
               />
             </div>
             <h4
@@ -550,7 +695,6 @@
         </div>
       </div>
     </section>
-    
 
     <!-- FOOTER -->
     <footer class="bg-gray-900 text-gray-400 py-12">
@@ -583,5 +727,46 @@
     </footer>
 
     <script src="js/whatsapp-button.js"></script>
+
+    <script>
+      let currentOpen = null;
+
+      function openCard(card, id) {
+        const content = document.getElementById(id);
+        const icon = card.querySelector(".icon");
+
+        //Se cierra la anterior
+        if (currentOpen && currentOpen !== id) {
+          const prevContent = document.getElemntById(currentOpen);
+          const prevCard = prevContent.closest(".brand-card");
+          const prevIcon = prevCard.querySelector(".icon");
+
+          prevContent.style.maxHeight = null;
+          prevContent.classList.remove("open");
+          prevCard.classList.remove("active");
+          prevIcon.innerText = "+";
+        }
+
+        //Abrir card actual
+        content.style.maxHeight = content.scrollHeight + "px";
+        content.classList.add("open");
+        card.classList.add("active");
+        icon.classList.add("hidden");
+
+        currentOpen = id;
+      }
+
+      function closeCard(card, id) {
+        const content = document.getElementById(id);
+        const icon = card.querySelector(".icon");
+
+        content.style.maxHeight = null;
+        content.classList.remove("open");
+        card.classList.remove("active");
+        icon.classList.remove("hidden");
+
+        currentOpen = null;
+      }
+    </script>
   </body>
 </html>
