@@ -132,10 +132,45 @@
     </header>
 
     <!-- HERO SECTION -->
-    <section
-      class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-700 overflow-hidden"
-    >
-      <div class="absolute inset-0 opacity-10">
+    <section class="relative overflow-hidden" style="background: #1e3a8a">
+      <!-- =====================================================
+           Carrusel de fondo
+           Agregar o quitar <img> aquí.
+           El JS al final las detecta automáticamente.
+           ===================================================== -->
+      <div
+        id="hero-slideshow"
+        class="absolute inset-0 flex"
+        style="
+          width: 200%;
+          transition: transform 0.9s cubic-bezier(0.77, 0, 0.18, 1);
+        "
+      >
+        <img
+          src="assets/trabajos/index_1.jpg"
+          alt=""
+          class="object-cover"
+          style="flex-shrink: 0; width: 50%; height: 100%"
+        />
+        <img
+          src="assets/trabajos/index_2.jpg"
+          alt=""
+          class="object-cover"
+          style="flex-shrink: 0; width: 50%; height: 100%"
+        />
+      </div>
+
+      <!-- =====================================================
+          Color Azul
+          Cambiar "opacity" para más o menos azul.
+          ===================================================== -->
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-700"
+        style="opacity: 0.75"
+      ></div>
+
+      <!-- Destellos -->
+      <div class="absolute inset-0 opacity-10 pointer-events-none">
         <div
           class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full filter blur-3xl"
         ></div>
@@ -163,7 +198,6 @@
               Servicio Profesional en<br />
               <span class="text-cyan-300">Refrigeración Comercial</span>
             </h2>
-
             <p
               class="max-w-3xl mx-auto text-lg md:text-xl text-blue-100 leading-relaxed"
             >
@@ -413,7 +447,7 @@
             class="brand-card bg-white rounded-xl p-6 shadow-md border border-gray-100"
             style="border-top: 4px solid #003da5"
           >
-            <p class="text-gray-500 text-sm">Equipos usados por marcas como</p>
+            <p class="text-gray-500 text-sm">Equipos usados por</p>
             <img
               src="assets/logos-empresas/jumex.svg"
               alt="logo-jumex"
@@ -439,9 +473,7 @@
             class="brand-card bg-white rounded-xl p-6 shadow-md border border-gray-100"
             style="border-top: 4px solid #003087"
           >
-            <p class="text-gray-500 text-sm">
-              Equipos presentes en expendios de
-            </p>
+            <p class="text-gray-500 text-sm">Equipos usados por</p>
             <img
               src="assets/logos-empresas/corona.svg"
               alt="logo-corona"
@@ -728,6 +760,7 @@
 
     <script src="js/whatsapp-button.js"></script>
 
+    <!----------- js para la animacion de las cards  ----------------->
     <script>
       let currentOpen = null;
 
@@ -767,6 +800,37 @@
 
         currentOpen = null;
       }
+    </script>
+
+    <!-- =====================================================
+        SLIDESHOW SCRIPT
+        Controlador del deslizamiento automático del fondo del hero.
+        ===================================================== -->
+    <script>
+      (function () {
+        const INTERVAL_MS = 5000; // <- cambia el tiempo entre imágenes
+
+        const track = document.getElementById("hero-slideshow");
+        if (!track) return;
+
+        const images = track.querySelectorAll("img");
+        const total = images.length;
+        if (total < 2) return;
+
+        let current = 0;
+
+        // Cada imagen ocupa el 100% del ancho del section,
+        // mover (100 / total * current)% desplaza a la imagen correcta.
+        function goTo(index) {
+          const pct = (100 / total) * index;
+          track.style.transform = "translateX(-" + pct + "%)";
+          current = index;
+        }
+
+        setInterval(function () {
+          goTo((current + 1) % total);
+        }, INTERVAL_MS);
+      })();
     </script>
   </body>
 </html>
