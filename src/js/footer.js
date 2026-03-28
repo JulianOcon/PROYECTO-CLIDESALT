@@ -39,9 +39,7 @@
 
           <!-- Descripción -->
           <p class="text-sm text-center max-w-md text-gray-500">
-            Servicio técnico especializado en refrigeración comercial para
-            tiendas de conveniencia y expendios de cerveza en Saltillo,
-            Coahuila y Monterrey, Nuevo León.
+            Soluciones en refrigeración comercial para tiendas y negocios en el area metropolitana de Saltillo y Monterrey.
           </p>
 
           <div class="h-px w-32 bg-gray-700"></div>

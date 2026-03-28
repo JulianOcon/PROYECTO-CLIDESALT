@@ -52,8 +52,6 @@
   const html = `
     <header class="${HEADER_BG} sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-
-        <!-- Logo + nombre de empresa -->
         <div class="flex items-center gap-4">
           <img
             src="${LOGO_SRC}"
@@ -61,23 +59,14 @@
             class="${LOGO_SIZE} w-auto object-contain"
           />
           <div class="leading-none flex flex-col justify-center">
-            <!--
-              IMPORTANTE: style="padding-bottom:0; line-height:2" anula el
-              padding-bottom:1em que .gradient-text define en el <head> del index.
-              Sin esto, la h1 empuja el subtítulo hacia abajo y el header crece.
-              No eliminar este inline style.
-            -->
             <h1 class="text-xl font-bold gradient-text"
                 style="padding-bottom:0; line-height:2;">${EMPRESA}</h1>
             <span class="text-xs ${SUBTITULO_COLOR}">${SUBTITULO}</span>
           </div>
         </div>
-
-        <!-- Botón CTA -->
         <a href="${CONTACT_HREF}" class="${CTA_STYLES}">
           ${CTA_LABEL}
         </a>
-
       </div>
     </header>
   `;

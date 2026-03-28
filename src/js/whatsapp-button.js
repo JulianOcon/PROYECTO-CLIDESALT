@@ -10,12 +10,9 @@ function getWhatsAppLink() {
     /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(
       navigator.userAgent
     );
-
-  if (isMobile) {
-    return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-  } else {
-    return `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
-  }
+  return isMobile
+    ? `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+    : `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
 }
 
 const buttonHTML = `
@@ -63,6 +60,11 @@ const buttonHTML = `
   opacity: 1;
   right: 75px;
 }
+
+#waText.visible {
+  opacity: 1;
+  right: 75px;
+}
 </style>
 
 <div id="waContainer">
@@ -76,32 +78,30 @@ const buttonHTML = `
       <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.571a.5.5 0 0 0 .612.612l5.717-1.471A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.371l-.36-.214-3.733.96.991-3.625-.235-.373A9.818 9.818 0 1 1 12 21.818z"/>
     </svg>
   </a>
-
-  <span id="waText">
-    ¿Necesitas servicio?
-  </span>
+  <span id="waText">¿Necesitas servicio?</span>
 </div>
 `;
 
 document.body.insertAdjacentHTML("beforeend", buttonHTML);
 
 // ===== ANIMACIÓN INICIAL =====
-const button = document.getElementById("whatsappButton");
-const text = document.getElementById("waText");
+// Muestra el texto 2s después de cargar, lo oculta tras 3s
+const waText = document.getElementById("waText");
 
 setTimeout(() => {
-  text.classList.add("visible");
-
+  waText.classList.add("visible");
   setTimeout(() => {
-    text.classList.remove("visible");
+    waText.classList.remove("visible");
   }, 3000);
 }, 2000);
 
-// ===== HOVER (FUNCIONA SIEMPRE) =====
-button.addEventListener("mouseenter", () => {
-  text.classList.add("visible");
+// ===== HOVER =====
+const waButton = document.getElementById("waButton");
+
+waButton.addEventListener("mouseenter", () => {
+  waText.classList.add("visible");
 });
 
-button.addEventListener("mouseleave", () => {
-  text.classList.remove("visible");
+waButton.addEventListener("mouseleave", () => {
+  waText.classList.remove("visible");
 });

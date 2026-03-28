@@ -1,3 +1,4 @@
+//slider.js
 document.querySelectorAll(".slider").forEach(slider => {
     const images = JSON.parse(slider.dataset.images);
     const img = slider.querySelector(".slider-img");
