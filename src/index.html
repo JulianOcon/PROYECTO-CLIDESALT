@@ -5,7 +5,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clidesalt | Refrigeración Comercial Profesional</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/trabajos/logoc.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/trabajos/logoc.png"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       @keyframes fadeInUp {
@@ -60,7 +65,7 @@
 
       .brand-card {
         transition: all 0.4s ease;
-        max-height: 200px;
+        max-height: 240px;
         overflow: hidden;
         display: flex;
         flex-direction: column;
@@ -124,6 +129,7 @@
         opacity: 0;
         transform: scale(0.5);
       }
+
     </style>
   </head>
   <body class="bg-gradient-to-br from-gray-50 to-blue-50 text-gray-800">
@@ -201,11 +207,12 @@
               <span class="text-cyan-300">Refrigeración Comercial</span>
             </h2>
             <p
-              class="max-w-3xl mx-auto text-lg md:text-xl text-blue-100 leading-relaxed"
+              class="max-w-3xl mx-auto text-lg md:text-xl text-blue-100 leading-relaxed text-justify"
             >
-              Soluciones profesionales en refrigeracion comercial para mantener tu negocio
-              siempre en funcionamiento. Atendemos enfriadores y maquinas de hielo en tiendas, 
-              supermercados y expendios en Saltillo, Monterrey y alrededores.
+              Soluciones profesionales en refrigeración comercial para mantener
+              tu negocio siempre en funcionamiento. Atendemos enfriadores y
+              máquinas de hielo en tiendas, supermercados y expendios en
+              Saltillo, Monterrey y alrededores.
             </p>
           </div>
 
@@ -236,7 +243,7 @@
       <div class="relative max-w-5xl mx-auto px-6">
         <div class="text-center mb-12">
           <span
-            class="text-cyan-600 font-semibold text-sm uppercase tracking-wider"
+            class="text-cyan-600 font-semibold text-base uppercase tracking-wider"
             >Conoce a Clidesalt</span
           >
           <h3
@@ -250,7 +257,7 @@
           class="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 md:p-12 rounded-3xl shadow-xl border border-blue-100"
         >
           <p
-            class="text-gray-700 leading-relaxed text-lg md:text-xl text-center"
+            class="text-gray-700 leading-relaxed text-lg md:text-xl text-justify"
           >
             En <strong class="text-blue-700">Clidesalt</strong> contamos con
             amplia experiencia en el servicio técnico especializado en equipos
@@ -258,41 +265,49 @@
             máquinas de hielo con soluciones confiables, rápidas y profesionales
             que mantienen tu negocio funcionando sin interrupciones.
           </p>
+          <div class="grid md:grid-cols-3 gap-6 mt-10 items-center">
 
-          <div class="grid md:grid-cols-3 gap-6 mt-10">
-            <div class="text-center">
-              <div class="text-4xl font-bold text-blue-600 mb-2">10+</div>
-              <div class="text-gray-600">Años de Experiencia</div>
-            </div>
-            <div class="text-center">
-              <div class="text-4xl font-bold text-blue-600 mb-2">500+</div>
-              <div class="text-gray-600">Clientes Satisfechos</div>
-            </div>
-            <div class="text-center">
-              <div class="text-2xl font-bold text-blue-600 mb-2">
-                Ciudades Atendidas
-              </div>
-              <div class="text-gray-600, contenedor">
-                <ul>
-                  <li>Saltillo</li>
-                  <li>Ramos Arizpe</li>
-                  <li>Arteaga</li>
-                  <li>Parras</li>
-                  <li>Piedras Negras</li>
-                  <li>Durango</li>
-                </ul>
-                <ul>
-                  <li>Monterrey</li>
-                  <li>Guadalupe</li>
-                  <li>San Pedro Garza Garcia</li>
-                  <li>Apodaca</li>
-                  <li>Escobedo</li>
-                  <li>Cadereyta</li>
-                  <li>Linares</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+  <!-- EXPERIENCIA -->
+  <div class="bg-white rounded-xl shadow-md p-6 text-center">
+    <div class="text-4xl font-bold text-blue-600 mb-2">10+</div>
+    <div class="text-gray-600 text-lg">Años de experiencia</div>
+  </div>
+
+  <!-- CLIENTES -->
+  <div class="bg-white rounded-xl shadow-md p-6 text-center">
+    <div class="text-4xl font-bold text-blue-600 mb-2">500+</div>
+    <div class="text-gray-600 text-lg">Clientes satisfechos</div>
+  </div>
+
+  <!-- CIUDADES -->
+  <div>
+    <div class="text-2xl font-bold text-blue-600 mb-3 text-center">
+      Ciudades atendidas
+    </div>
+
+    <div class="flex justify-center gap-6 text-gray-600 text-sm">
+      <ul class="text-left">
+        <li>Saltillo</li>
+        <li>Ramos Arizpe</li>
+        <li>Arteaga</li>
+        <li>Parras</li>
+        <li>Piedras Negras</li>
+        <li>Durango</li>
+      </ul>
+
+      <ul class="text-left">
+        <li>Monterrey</li>
+        <li>Guadalupe</li>
+        <li>San Pedro Garza García</li>
+        <li>Apodaca</li>
+        <li>Escobedo</li>
+        <li>Cadereyta</li>
+        <li>Linares</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
         </div>
       </div>
     </section>
@@ -302,14 +317,14 @@
       <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-14">
           <span
-            class="text-cyan-600 font-semibold text-sm uppercase tracking-wide"
+            class="text-cyan-600 font-semibold text-base uppercase tracking-wide"
           >
             Experiencia en el sector
           </span>
           <h3 class="text-4xl md:text-5xl font-bold mt-3 gradient-text">
             Empresas y marcas donde brindamos servicio
           </h3>
-          <p class="text-gray-600 mt-4 max-w-3xl mx-auto">
+          <p class="text-gray-600 mt-4 max-w-3xl mx-auto text-justify text-lg">
             Nuestro servicio técnico atiende equipos de refrigeración comercial
             utilizados en tiendas, supermercados y negocios que trabajan con
             marcas reconocidas de bebidas y alimentos.
@@ -332,13 +347,13 @@
             style="border-top: 4px solid #0453db"
           >
             <div class="flex flex-col items-center text-center">
-              <p class="text-gray-500 text-sm mb-2">
+              <p class="text-gray-500 text-base mb-2">
                 Refrigeradores comerciales de
               </p>
 
               <img
                 src="assets/logos-empresas/imbera.svg"
-                class="w-24 h-24 object-contain mb-4 transition duration-300 group-hover:scale-110"
+                class="w-20 h-20 object-contain mb-4 transition duration-300 group-hover:scale-110"
               />
 
               <span class="icon text-xl font-bold transition-all duration-300"
@@ -361,8 +376,8 @@
             style="border-top: 4px solid #003da5"
           >
             <div class="flex flex-col items-center text-center">
-              <p class="text-gray-500 text-sm mb-2">
-                Servicos técnicos en&nbsp;colaboracion&nbsp;con
+              <p class="text-gray-500 text-base mb-2 text-center">
+                Servicios técnicos en colaboración con
               </p>
 
               <img
@@ -376,9 +391,9 @@
             </div>
 
             <div id="repare" class="accordion-content">
-              Compañia especializada en mantenimiento de equipos de
-              refrigeracion comercial y atencion integral a tiendas de
-              conveniencia, incluyendo refacciones y soporte tecnico.
+              Compañía especializada en mantenimiento de equipos de
+              refrigeración comercial y atención integral a tiendas de
+              conveniencia, incluyendo refacciones y soporte técnico.
             </div>
           </div>
 
@@ -390,7 +405,7 @@
             style="border-top: 4px solid #b71c1c"
           >
             <div class="flex flex-col items-center text-center">
-              <p class="text-gray-500 text-sm mb-2">Equipos de</p>
+              <p class="text-gray-500 text-base mb-2">Equipos de</p>
               <img
                 src="assets/logos-empresas/torrey.svg"
                 class="w-24 h-24 object-contain mb-4 transition duration-300 group-hover:scale-110"
@@ -416,7 +431,7 @@
             style="border-top: 4px solid #f37115"
           >
             <div class="flex flex-col items-center text-center">
-              <p class="text-gray-500 text-sm mb-2">
+              <p class="text-gray-500 text-base mb-2">
                 Servicios técnicos en tiendas de
               </p>
               <img
@@ -449,7 +464,7 @@
             class="brand-card bg-white rounded-xl p-6 shadow-md border border-gray-100"
             style="border-top: 4px solid #003da5"
           >
-            <p class="text-gray-500 text-sm">Equipos usados por</p>
+            <p class="text-gray-500 text-base">Equipos usados por</p>
             <img
               src="assets/logos-empresas/jumex.svg"
               alt="logo-jumex"
@@ -462,7 +477,7 @@
             class="brand-card bg-white rounded-xl p-6 shadow-md border border-gray-100"
             style="border-top: 4px solid #cc0000"
           >
-            <p class="text-gray-500 text-sm">Refrigeradores comerciales de</p>
+            <p class="text-gray-500 text-base">Refrigeradores comerciales de</p>
             <img
               src="assets/logos-empresas/penafiel.svg"
               alt="logo-penafiel"
@@ -475,7 +490,7 @@
             class="brand-card bg-white rounded-xl p-6 shadow-md border border-gray-100"
             style="border-top: 4px solid #003087"
           >
-            <p class="text-gray-500 text-sm">Equipos usados por</p>
+            <p class="text-gray-500 text-base">Equipos usados por</p>
             <img
               src="assets/logos-empresas/corona.svg"
               alt="logo-corona"
@@ -488,7 +503,7 @@
             class="brand-card bg-white rounded-xl p-6 shadow-md border border-gray-100"
             style="border-top: 4px solid #cc0000"
           >
-            <p class="text-gray-500 text-sm">Equipos en supermercados como</p>
+            <p class="text-gray-500 text-base">Equipos en supermercados como</p>
             <img
               src="assets/logos-empresas/soriana.svg"
               alt="logo-soriana"
@@ -498,17 +513,17 @@
 
           <!-- Negocios independientes -->
           <div
-            class="brand-card bg-white rounded-xl p-6 shadow-md border border-gray-100"
+            class="brand-card col-span-full bg-white rounded-xl p-6 shadow-md border border-gray-100"
             style="border-top: 4px solid #1e40af"
           >
-            <p class="text-gray-500 text-sm">Equipos en</p>
-            <div class="mt-2 font-bold text-xl text-blue-700">
-              Negocios independientes y Empresas Privadas
+            <p class="text-gray-500 text-base text-center">También trabajamos con</p>
+
+            <div class="mt-2 font-bold text-xl text-blue-700 text-center">
+              Negocios independientes y empresas privadas
             </div>
           </div>
-        </div>
 
-        <p class="text-center text-gray-400 text-sm mt-10">
+        <p class="col-span-full text-center text-gray-400 text-sm mt-10">
           Las marcas mencionadas se utilizan únicamente como referencia de los
           equipos atendidos por nuestro servicio técnico.
         </p>
@@ -523,7 +538,7 @@
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
           <span
-            class="text-cyan-600 font-semibold text-sm uppercase tracking-wider"
+            class="text-cyan-600 font-semibold text-base uppercase tracking-wider"
             >Lo Que Ofrecemos</span
           >
           <h3 class="text-4xl md:text-5xl font-bold mt-3 gradient-text">
@@ -676,12 +691,12 @@
       <div class="relative max-w-5xl mx-auto px-6">
         <div class="text-center mb-12">
           <span
-            class="text-cyan-300 font-semibold text-sm uppercase tracking-wider"
+            class="text-cyan-300 font-semibold text-base uppercase tracking-wider"
             >Estamos Para Ayudarte</span
           >
           <h3 class="text-4xl md:text-5xl font-bold mt-3 mb-6">Contáctanos</h3>
-          <p class="text-blue-100 text-lg">
-            ¿Necesitas servicio técnico? Estamos disponibles para atenderte
+          <p class="text-blue-100 text-lg text-center">
+            ¿Necesitas servicio técnico? Estamos disponibles para atenderte.
           </p>
         </div>
 
