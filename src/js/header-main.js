@@ -40,6 +40,31 @@
   const SUBTITULO_COLOR = "text-gray-500";
 
   /* ====================================================
+   * MENÚ DE NAVEGACIÓN CENTRAL
+   * Cada entrada puede ser:
+   *   - Enlace simple:   { label: "Texto", href: "#seccion" }
+   *   - Dropdown:        { label: "Texto", dropdown: [ {label, href}, ... ] }
+   *
+   * El primer elemento del dropdown siempre se muestra como
+   * "Ver todos" con estilo destacado. El resto son opciones normales.
+   * ==================================================== */
+  const NAV_ITEMS = [
+    {
+      label: "Servicios",
+      dropdown: [
+        { label: "Ver todos",                href: "#servicios" },
+        { label: "Cambio de Compresor",      href: "servicios/cambio-compresor.html" },
+        { label: "Carga de Gas",             href: "servicios/carga-gas.html" },
+        { label: "Mantenimiento Preventivo", href: "servicios/mantenimiento.html" },
+        { label: "Instalación de Equipos",   href: "servicios/instalacion-hielo.html" },
+      ]
+    },
+    { label: "Experiencia", href: "#experiencia" },
+    { label: "Nosotros", href: "#nosotros" },
+    
+  ];
+  
+  /* ====================================================
    * BOTÓN CTA (esquina derecha)
    * ==================================================== */
   const CTA_LABEL  = "Contactar";
@@ -49,27 +74,87 @@
 
   /* -------------------------------------------------- */
 
-  const html = `
-    <header class="${HEADER_BG} sticky top-0 z-50">
-      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div class="flex items-center gap-4">
-          <img
-            src="${LOGO_SRC}"
-            alt="${EMPRESA}"
-            class="${LOGO_SIZE} w-auto object-contain"
-          />
-          <div class="leading-none flex flex-col justify-center">
-            <h1 class="text-xl font-bold gradient-text"
-                style="padding-bottom:0; line-height:2;">${EMPRESA}</h1>
-            <span class="text-xs ${SUBTITULO_COLOR}">${SUBTITULO}</span>
+
+  /* Genera el HTML de cada ítem del nav */
+  function renderNavItem(item) {
+    if (item.dropdown) {
+      const [first, ...rest] = item.dropdown;
+      const restItems = rest.map(opt => `
+        <a href="${opt.href}"
+           class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors">
+          ${opt.label}
+        </a>`).join("");
+ 
+      return `
+        <div class="relative group">
+          <!-- Botón que abre el dropdown -->
+          <button class="flex items-center gap-1 text-sm font-semibold text-gray-700
+                         hover:text-blue-600 transition-colors py-2">
+            ${item.label}
+            <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
+                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+ 
+          <!-- Panel desplegable — aparece al hacer hover -->
+          <div class="absolute left-0 top-full mt-1 w-52 bg-white rounded-xl shadow-xl
+                      border border-gray-100 overflow-hidden
+                      opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                      transition-all duration-200 z-50">
+ 
+            <!-- "Ver todos" — destacado en azul -->
+            <a href="${first.href}"
+               class="block px-4 py-3 text-sm font-bold text-blue-700
+                      bg-blue-50 hover:bg-blue-100 transition-colors border-b border-blue-100">
+              ${first.label} →
+            </a>
+ 
+            <!-- Resto de opciones -->
+            ${restItems}
           </div>
+        </div>`;
+    }
+ 
+    // Enlace simple
+    return `
+      <a href="${item.href}"
+         class="text-sm font-semibold text-gray-700 hover:text-blue-600 transition-colors py-2">
+        ${item.label}
+      </a>`;
+  }
+ 
+  const navHTML = NAV_ITEMS.map(renderNavItem).join("");
+
+
+  
+const html = `
+  <header class="${HEADER_BG} sticky top-0 z-50">
+    <div class="w-full px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <img
+          src="${LOGO_SRC}"
+          alt="${EMPRESA}"
+          class="${LOGO_SIZE} w-auto object-contain"
+        />
+        <div class="leading-none flex flex-col justify-center">
+          <h1 class="text-xl font-bold gradient-text"
+              style="padding-bottom:0; line-height:1.25;">${EMPRESA}</h1>
+          <span class="text-xs ${SUBTITULO_COLOR}">${SUBTITULO}</span>
         </div>
-        <a href="${CONTACT_HREF}" class="${CTA_STYLES}">
-          ${CTA_LABEL}
-        </a>
       </div>
-    </header>
-  `;
+
+      <nav class="hidden md:flex items-center gap-6">
+          ${navHTML}
+        </nav>
+
+
+      <a href="${CONTACT_HREF}" class="${CTA_STYLES}">
+        ${CTA_LABEL}
+      </a>
+    </div>
+  </header>
+`;
 
   const placeholder = document.getElementById("header-placeholder");
   if (placeholder) {

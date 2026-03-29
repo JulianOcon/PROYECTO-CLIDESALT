@@ -61,7 +61,7 @@
 
   const html = `
     <header class="${HEADER_BG} text-white sticky top-0 z-50">
-      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="w-full px-6 py-4 flex items-center justify-between">
 
         <!-- Logo + nombre de empresa -->
         <div class="flex items-center gap-4">
@@ -78,7 +78,7 @@
               el nombre ocupe exactamente la misma altura visual.
             -->
             <h1 class="text-xl font-bold text-white"
-                style="line-height:2;">${EMPRESA}</h1>
+                style="line-height:1.25;">${EMPRESA}</h1>
             <span class="text-xs ${SUBTITULO_COLOR}">${SUBTITULO}</span>
           </div>
         </div>
@@ -91,6 +91,7 @@
       </div>
     </header>
   `;
+
 
   const placeholder = document.getElementById("header-placeholder");
   if (placeholder) {
