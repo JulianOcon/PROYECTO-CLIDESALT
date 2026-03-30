@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Misión y Visión | Clidesalt</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/trabajos/logo-c.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .gradient-text {
+        background: linear-gradient(135deg, #1e40af 0%, #06b6d4 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        padding-bottom: 1em;
+      }
+      .glass-effect {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+      }
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(24px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+      .fade-up-1 { animation: fadeUp 0.7s ease-out 0.1s both; }
+      .fade-up-2 { animation: fadeUp 0.7s ease-out 0.3s both; }
+      .valor-card {
+        border-left: 3px solid #e2e8f0;
+        transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+      }
+      .valor-card:hover {
+        border-color: #06b6d4;
+        transform: translateX(6px);
+        box-shadow: 0 4px 24px rgba(6, 182, 212, 0.10);
+      }
+    </style>
+  </head>
+
+  <body class="bg-gradient-to-br from-gray-50 to-blue-50 text-gray-800">
+
+    <!-- HEADER -->
+    <header class="glass-effect sticky top-0 z-50 shadow-lg border-b border-gray-200">
+      <div class="w-full px-6 py-4 flex items-center justify-between">
+
+        <!-- Logo -->
+        <a href="../index.html" class="flex items-center gap-4" style="text-decoration:none;">
+          <img src="../assets/trabajos/logo-c.svg" alt="Clidesalt" class="h-12 w-auto object-contain" />
+          <div class="leading-none flex flex-col justify-center">
+            <h1 class="text-xl font-bold gradient-text" style="padding-bottom:0; line-height:1.25;">Clidesalt</h1>
+            <span class="text-xs text-gray-500">Refrigeración Comercial</span>
+          </div>
+        </a>
+
+        <!-- Nav -->
+        <nav class="hidden md:flex items-center gap-6">
+
+          <!-- Dropdown Servicios -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 text-sm font-semibold text-gray-700 hover:text-blue-600 transition-colors py-2">
+              Servicios
+              <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
+                   fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="absolute left-0 top-full mt-1 w-52 bg-white rounded-xl shadow-xl
+                        border border-gray-100 overflow-hidden
+                        opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                        transition-all duration-200 z-50">
+              <a href="../index.html#servicios"
+                 class="block px-4 py-3 text-sm font-bold text-blue-700 bg-blue-50 hover:bg-blue-100 transition-colors border-b border-blue-100">
+                Ver todos →
+              </a>
+              <a href="../servicios/cambio-compresor.html"
+                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors">
+                Cambio de Compresor
+              </a>
+              <a href="../servicios/carga-gas.html"
+                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors">
+                Carga de Gas
+              </a>
+              <a href="../servicios/mantenimiento.html"
+                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors">
+                Mantenimiento Preventivo
+              </a>
+              <a href="../servicios/instalacion-hielo.html"
+                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors">
+                Instalación de Equipos
+              </a>
+            </div>
+          </div>
+
+          <a href="../index.html#experiencia" class="text-sm font-semibold text-gray-700 hover:text-blue-600 transition-colors py-2">
+            Experiencia
+          </a>
+          <a href="../index.html#nosotros" class="text-sm font-semibold text-gray-700 hover:text-blue-600 transition-colors py-2">
+            Nosotros
+          </a>
+          <!-- Página actual — resaltada en azul -->
+          <a href="#" class="text-sm font-semibold text-blue-600 py-2">
+            Misión, Visión y Valores
+          </a>
+
+        </nav>
+
+        <!-- Botón CTA -->
+        <a href="../index.html#contacto"
+           class="hidden md:block bg-gradient-to-r from-blue-600 to-cyan-500
+                  text-white px-6 py-2 rounded-full font-semibold
+                  hover:shadow-xl transition-all duration-300 hover:scale-105">
+          Contactar
+        </a>
+
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-700 overflow-hidden py-24">
+      <div class="absolute inset-0 opacity-10 pointer-events-none">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full filter blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-cyan-300 rounded-full filter blur-3xl"></div>
+      </div>
+      <div class="relative max-w-4xl mx-auto px-6 text-center fade-up-1">
+        <span class="text-cyan-300 font-semibold text-sm uppercase tracking-widest mb-4 block">
+          Quiénes somos
+        </span>
+        <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+          Misión, <span class="text-cyan-300">Visión</span> y Valores
+        </h1>
+        <p class="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">
+          Los principios que guían cada servicio que ofrecemos y la dirección
+          hacia donde caminamos como empresa.
+        </p>
+      </div>
+    </section>
+
+    <!-- MISIÓN + VISIÓN -->
+    <section class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-10 fade-up-1">
+
+          <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-10 border border-blue-100 shadow-sm relative overflow-hidden">
+            <div class="relative">
+              <div class="h-1 w-16 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full mb-5"></div>
+              <h2 class="text-3xl font-bold text-gray-900 mb-4">Nuestra Misión</h2>
+              <p class="text-gray-600 leading-relaxed text-[1.05rem]">
+                En <strong class="text-blue-700">CLIDESALT</strong>, nos comprometemos a
+                proporcionar soluciones integrales de aire acondicionado y refrigeración
+                con calidad y responsabilidad, ofreciendo un servicio excelente que genere
+                confianza y soluciones efectivas a los problemas de nuestros clientes.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-slate-800 to-blue-900 rounded-3xl p-10 border border-blue-800 shadow-sm relative overflow-hidden">
+            <div class="relative">
+              <div class="h-1 w-16 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mb-5"></div>
+              <h2 class="text-3xl font-bold text-white mb-4">Nuestra Visión</h2>
+              <p class="text-blue-100 leading-relaxed text-[1.05rem]">
+                Ser una empresa líder en soluciones de aire acondicionado y refrigeración
+                en la región, reconocida por nuestra excelencia en el servicio, compromiso
+                con la calidad y capacidad para resolver los desafíos de nuestros clientes,
+                contribuyendo al bienestar y confort de la comunidad.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- VALORES -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <div class="max-w-6xl mx-auto px-6">
+
+        <div class="text-center mb-14 fade-up-1">
+          <span class="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Lo que nos define</span>
+          <h2 class="text-4xl md:text-5xl font-bold mt-3 gradient-text">Nuestros Valores</h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 fade-up-2">
+
+          <div class="valor-card bg-white rounded-2xl p-7 shadow-sm">
+            <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg text-gray-900 mb-2">Calidad</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Cada trabajo se realiza con los más altos estándares técnicos y materiales de primera.</p>
+          </div>
+
+          <div class="valor-card bg-white rounded-2xl p-7 shadow-sm">
+            <div class="w-10 h-10 bg-cyan-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg text-gray-900 mb-2">Responsabilidad</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Cumplimos con nuestros compromisos y respondemos por cada servicio que entregamos.</p>
+          </div>
+
+          <div class="valor-card bg-white rounded-2xl p-7 shadow-sm">
+            <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg text-gray-900 mb-2">Buen Servicio</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Trato amable, atención oportuna y comunicación clara en cada visita técnica.</p>
+          </div>
+
+          <div class="valor-card bg-white rounded-2xl p-7 shadow-sm">
+            <div class="w-10 h-10 bg-cyan-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg text-gray-900 mb-2">Confianza</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Construimos relaciones duraderas con nuestros clientes basadas en transparencia y honestidad.</p>
+          </div>
+
+          <div class="valor-card bg-white rounded-2xl p-7 shadow-sm sm:col-span-2 lg:col-span-1">
+            <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg text-gray-900 mb-2">Soluciones a Problemas</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Diagnosticamos con precisión y encontramos la solución más eficiente para cada situación.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-gradient-to-br from-blue-900 to-cyan-800 text-white relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full filter blur-3xl"></div>
+      </div>
+      <div class="relative max-w-2xl mx-auto px-6 text-center">
+        <span class="text-cyan-300 font-semibold text-sm uppercase tracking-wider">Estamos Para Ayudarte</span>
+        <h2 class="text-4xl font-bold mt-3 mb-4">¿Listo para trabajar con nosotros?</h2>
+        <a href="../index.html#contacto"
+           class="inline-block bg-white text-blue-900 px-10 py-4 rounded-full font-bold text-lg
+                  hover:shadow-2xl transition-all duration-300 hover:scale-105">
+          Contactar Ahora
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col items-center gap-6">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 flex items-center justify-center">
+              <img src="../assets/trabajos/logo-c.svg" alt="Clidesalt" class="h-12 w-auto object-contain" />
+            </div>
+            <div class="leading-tight">
+              <div class="text-white font-bold">Clidesalt</div>
+              <div class="text-xs text-gray-500">Refrigeración Comercial</div>
+            </div>
+          </div>
+          <div class="h-px w-32 bg-gray-700"></div>
+          <p class="text-sm">© 2025 Clidesalt · Todos los derechos reservados</p>
+        </div>
+      </div>
+    </footer>
+
+    <!----------- js pdel boton de whats  ----------------->
+    <script src="js/whatsapp-button.js"></script>
+
+  </body>
+</html>

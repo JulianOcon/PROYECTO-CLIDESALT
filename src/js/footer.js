@@ -1,13 +1,3 @@
-/**
- * footer.js
- * Footer compartido para todas las páginas.
- *
- * Uso desde el index:    <script src="js/footer.js"></script>
- * Uso desde servicios/:  <script src="../js/footer.js"></script>
- *
- * Detecta automáticamente si está en la raíz o en una subcarpeta
- * para construir las rutas correctas.
- */
 (function () {
   const enServicio = window.location.pathname.includes("/servicios/");
   const logoSrc = enServicio
