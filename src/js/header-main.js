@@ -1,98 +1,65 @@
-/**
- * header-main.js — Header para la página principal (index)
- *
- * Uso en index.html:
- *   <div id="header-placeholder"></div>
- *   <script src="js/header-main.js"></script>
- *
- * Requiere en el <head> del HTML:
- *   .glass-effect  → fondo blanco semitransparente con blur
- *   .gradient-text → texto con degradado azul
- */
 (function () {
-
-  /* ====================================================
-   * RUTAS — ajustar si cambia la ubicación de los assets
-   * ==================================================== */
-  const LOGO_SRC     = "assets/trabajos/logo-c.svg";
+  const LOGO_SRC = "assets/trabajos/logo-c.svg";
   const CONTACT_HREF = "#contacto";
 
-  /* ====================================================
-   * FONDO DEL HEADER
-   * Actualmente: blanco semitransparente con blur (glass).
-   * Para color sólido, cambia por ej: "bg-white" o "bg-blue-900 text-white"
-   * ==================================================== */
   const HEADER_BG = "glass-effect shadow-lg border-b border-gray-200";
-
-  /* ====================================================
-   * LOGO — tamaño compartido con header-service.js
-   * Si cambias este valor, cámbialo también allá.
-   * ==================================================== */
   const LOGO_SIZE = "h-12";
 
-  /* ====================================================
-   * TEXTO DE MARCA
-   * SUBTITULO_COLOR: usa text-gray-500 sobre fondo blanco.
-   * En header-service es text-white/60 porque el fondo es oscuro.
-   * ==================================================== */
-  const EMPRESA        = "Clidesalt";
-  const SUBTITULO      = "Refrigeración Comercial";
+  const EMPRESA = "Clidesalt";
+  const SUBTITULO = "Refrigeración Comercial";
   const SUBTITULO_COLOR = "text-gray-500";
 
-  /* ====================================================
-   * MENÚ DE NAVEGACIÓN CENTRAL
-   * Cada entrada puede ser:
-   *   - Enlace simple:   { label: "Texto", href: "#seccion" }
-   *   - Dropdown:        { label: "Texto", dropdown: [ {label, href}, ... ] }
-   *
-   * El primer elemento del dropdown siempre se muestra como
-   * "Ver todos" con estilo destacado. El resto son opciones normales.
-   * ==================================================== */
   const NAV_ITEMS = [
     {
       label: "Servicios",
       dropdown: [
-        { label: "Ver todos",                href: "#servicios" },
-        { label: "Cambio de Compresor",      href: "servicios/cambio-compresor.html" },
-        { label: "Carga de Gas",             href: "servicios/carga-gas.html" },
-        { label: "Mantenimiento Preventivo", href: "servicios/mantenimiento.html" },
-        { label: "Instalación de Equipos",   href: "servicios/instalacion-hielo.html" },
-      ]
+        { label: "Ver todos", href: "#servicios" },
+        {
+          label: "Cambio de Compresor",
+          href: "servicios/cambio-compresor.html",
+        },
+        { label: "Carga de Gas", href: "servicios/carga-gas.html" },
+        {
+          label: "Mantenimiento Preventivo",
+          href: "servicios/mantenimiento.html",
+        },
+        {
+          label: "Instalación de Equipos",
+          href: "servicios/instalacion-hielo.html",
+        },
+      ],
     },
     { label: "Experiencia", href: "#experiencia" },
     { label: "Nosotros", href: "#nosotros" },
-    
+    { label: "Mision, Vision y Valores", href: "servicios/mision-vision.html" },
   ];
-  
-  /* ====================================================
-   * BOTÓN CTA (esquina derecha)
-   * ==================================================== */
-  const CTA_LABEL  = "Contactar";
+
+  const CTA_LABEL = "Contactar";
   const CTA_STYLES = `hidden md:block bg-gradient-to-r from-blue-600 to-cyan-500
                       text-white px-6 py-2 rounded-full font-semibold
                       hover:shadow-xl transition-all duration-300 hover:scale-105`;
 
-  /* -------------------------------------------------- */
-
-
-  /* Genera el HTML de cada ítem del nav */
   function renderNavItem(item) {
     if (item.dropdown) {
       const [first, ...rest] = item.dropdown;
-      const restItems = rest.map(opt => `
+      const restItems = rest
+        .map(
+          (opt) => `
         <a href="${opt.href}"
-           class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors">
+          class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors">
           ${opt.label}
-        </a>`).join("");
- 
+        </a>`,
+        )
+        .join("");
+
       return `
         <div class="relative group">
           <!-- Botón que abre el dropdown -->
           <button class="flex items-center gap-1 text-sm font-semibold text-gray-700
-                         hover:text-blue-600 transition-colors py-2">
+            hover:text-blue-600 transition-colors py-2">
             ${item.label}
             <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
-                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </button>
@@ -115,20 +82,17 @@
           </div>
         </div>`;
     }
- 
-    // Enlace simple
+
     return `
       <a href="${item.href}"
          class="text-sm font-semibold text-gray-700 hover:text-blue-600 transition-colors py-2">
         ${item.label}
       </a>`;
   }
- 
+
   const navHTML = NAV_ITEMS.map(renderNavItem).join("");
 
-
-  
-const html = `
+  const html = `
   <header class="${HEADER_BG} sticky top-0 z-50">
     <div class="w-full px-6 py-4 flex items-center justify-between">
       <div class="flex items-center gap-4">
@@ -162,5 +126,4 @@ const html = `
   } else {
     document.body.insertAdjacentHTML("afterbegin", html);
   }
-
 })();
